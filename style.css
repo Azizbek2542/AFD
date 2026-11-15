@@ -121,9 +121,8 @@ nav .nav-container {
     letter-spacing: 0%;
     vertical-align: middle;
     color: black;
-    animation: fade 1s ease forwards;
+    animation: fade 1s ease backwards;
     animation-delay: 0.1s;
-    opacity: 0;
 }
 .links-container {
     height: 100%;
@@ -148,39 +147,16 @@ nav a {
     vertical-align: middle;
     color: black;
     transition: 0.3s ease;
-    animation: fade 1s ease forwards;
-    opacity: 0;
-    pointer-events: none;
+    animation: fade 1s ease backwards;
+    pointer-events: auto;
+    animation-delay: calc(var(--i) * 0.2s);
 }   
-.links-container a:nth-child(1) {
-  animation-delay: 0.4s;
-}
-.links-container a:nth-child(2) {
-  animation-delay: 0.6s;
-}
-.links-container a:nth-child(3) {
-  animation-delay: 0.8s;
-}
 
-.links-container a:nth-child(4) {
-  animation-delay: 1s;
-}
-
-.links-container a:nth-child(5) {
-  animation-delay: 1.2s;
-}
-.links-container a:nth-child(6) {
-  animation-delay: 1.4s;
-}
 @keyframes fade {
   from {
     opacity: 0;
+    pointer-events: none;
     transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
   }
 }
 
@@ -518,13 +494,13 @@ footer {
   color: black;
 }
 
-.laptop-main-wrapper {
+/* .laptop-main-wrapper {
   width: 100%;
   right: 200px;
   top: -120px;
   height: 100%;
   position: relative !important;  
-}
+} */
 
 .laptop-bottom-panel {
   width: 350px;
@@ -586,24 +562,32 @@ footer {
     rgba(180, 90, 210, 0.03) 88%,
     rgba(180, 90, 210, 0) 100%
   );
-    /* background: radial-gradient(50% 49.71% at 50.04% 58.03%, #972a74 0, #8a266a 4%, #601b4a 19%, #3d112f 35%, #230a1b00 0%, #0f040c00 67%, #04010300 83%); */
     position: absolute;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     pointer-events: none;
-    animation: shine-pulse 3.6s ease-in-out infinite;
+    animation: shine-in 1s ease 1s backwards, shine-pulse 3.6s ease-in-out 2s infinite;
 }
 
 .laptop-bottom-panel-shine {
   right: -51.5px;
   bottom: -62px;
-  animation-delay: -1.8s;
 }
 
 .laptop-top-panel-shine {
   top: -45px;
   left: -48px;
+}
+
+@keyframes shine-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: scale(0.86);
+    opacity: 0.85;
+  }
 }
 
 @keyframes shine-pulse {
@@ -1405,12 +1389,12 @@ footer {
   }
 }
 
-@media(max-width:1111px) {
+/* @media(max-width:1111px) {
   .laptop-main-wrapper {
     transform: scale(0.8) !important;
     right: 150px;
   }
-}
+} */
 
 @media(max-width:1060px) {
   .parent-container {
@@ -1418,64 +1402,64 @@ footer {
     margin-bottom: 700px;
     gap: 60px;
   }
-  .laptop-main-wrapper {
+  /* .laptop-main-wrapper {
     transform: unset !important;
     left: -35%;
-  }
+  } */
   .prnt-text-info {
     width: 100% !important;
   }
 }
 
-@media(max-width:740px) {
+/* @media(max-width:740px) {
   .laptop-main-wrapper {
     transform: scale(0.9) !important;
   }
-}
+} */
 
 @media(max-width:655px) {
-  .laptop-main-wrapper {
+  /* .laptop-main-wrapper {
     left: -40%;
-  }
+  } */
   .parent-container {
     margin-bottom: 600px;
   }
 }
 
-@media(max-width:630px) {
+/* @media(max-width:630px) {
   .laptop-main-wrapper {
     transform: scale(0.85) !important;
   }
-}
+} */
 
-@media(max-width:590px) {
+/* @media(max-width:590px) {
   .laptop-main-wrapper {
     transform: scale(0.80) !important;
   }
-}
+} */
 
-@media(max-width:560px) {
+/* @media(max-width:560px) {
   .laptop-main-wrapper {
     transform: scale(0.75) !important;
   }
-}
+} */
 
-@media(max-width:520px) {
+/* @media(max-width:520px) {
   .laptop-main-wrapper {
     transform: scale(0.7) !important;
   }
-}
+} */
 
 @media(max-width:485px) {
-  .laptop-main-wrapper {
+  /* .laptop-main-wrapper {
     transform: scale(0.65) !important;
-  }
+  } */
   .parent-container {
     gap: 100px;
   }
 }
 
-@media(max-width:455px) {
+/* @media(max-width:455px) {
   .laptop-main-wrapper {
     transform: scale(0.6) !important;
   }
@@ -1485,7 +1469,7 @@ footer {
   .laptop-main-wrapper {
     transform: scale(0.55) !important;
   }
-}
+} */
 
 @media(max-width:400px) {
   .parent-container {
@@ -1493,22 +1477,22 @@ footer {
   }
 }
 
-@media(max-width:380px) {
+/* @media(max-width:380px) {
   .laptop-main-wrapper {
     transform: scale(0.53) !important;
   }
-}
+} */
 
-@media(max-width:365px) {
+/* @media(max-width:365px) {
   .laptop-main-wrapper {
     transform: scale(0.5) !important;
   }
-}
+} */
 
 @media(max-width:350px) {
-  .laptop-main-wrapper {
+  /* .laptop-main-wrapper {
     transform: scale(0.47) !important;
-  }
+  } */
   .parent-container {
     margin-bottom: 350px !important;
   }
@@ -1528,9 +1512,9 @@ footer {
   .typed-cursor {
     font-size: 40px;
   }
-  .laptop-main-wrapper {
+  /* .laptop-main-wrapper {
     transform: scale(0.9);
-  }
+  } */
   .parent-container {
     align-items: end;
     height: 450px;
@@ -2102,12 +2086,12 @@ textarea {
 .LinkedIn-msg {
   top: 30px;
 }
-.laptop-main-wrapper {
+/* .laptop-main-wrapper {
   transform: scale(0.43) !important;
-}
+} */
 }
 
-@media(max-width:300px) {
+/* @media(max-width:300px) {
   .laptop-main-wrapper {
     transform: scale(0.4) !important;
   }
@@ -2117,7 +2101,7 @@ textarea {
   .laptop-main-wrapper {
     transform: scale(0.37) !important;
   }
-}
+} */
 
 .inst-msg h1,
 .facebook-msg h1,
@@ -2796,4 +2780,57 @@ body:has(.fancybox__container) {
   box-shadow: none !important;
   background-color: transparent !important;
   border-radius: 0 !important;
+}
+
+/* =========================================================
+   ЛАПТОП: ОДИН КОНТРОЛЛИРУЕМЫЙ МАСШТАБ ВМЕСТО ~25 MEDIA-ЗАПРОСОВ
+   Ноутбук нарисован на «холсте» 860×620 (.laptop-canvas) и целиком
+   масштабируется под ширину своего контейнера (.laptop-holder).
+   scale = ширина_контейнера / 860px  (tan(atan2(a,b)) = a/b).
+   Положение теперь не зависит от ширины окна, поэтому
+   подгонять left/right/top в каждом media не нужно.
+   ========================================================= */
+.laptop-holder {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(860px, 62vw);
+  aspect-ratio: 860 / 620;
+  container-type: inline-size;   /* даёт единицу cqw — ширину контейнера */
+  pointer-events: none;          /* не перекрывает текст и кнопки слева */
+  align-self: flex-start;
+  /* подвинуть сцену к правому краю и чуть вверх (в долях ширины) */
+  margin-top: calc(min(860px, 62vw) * -0.07);
+  margin-left: calc(min(860px, 62vw) * -0.102);
+}
+
+.laptop-canvas {
+  --k: .7;                                           /* запасное значение */
+  --k: tan(atan2(100cqw, 860px));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  scale: var(--k);
+  translate: calc(-505px * var(--k)) calc(-60px * var(--k));
+}
+
+.laptop-bottom-panel { left: 539px; pointer-events: none; }
+.laptop-top-panel    { left: 490px; pointer-events: none; }
+
+@media (max-width: 1060px) {
+  .parent-container {
+    grid-template-columns: minmax(0, 1fr);   /* широкий ноутбук не раздувает колонку */
+    height: auto !important;
+    margin-bottom: 120px !important;
+    gap: 30px !important;
+  }
+  .laptop-holder {
+    width: min(125vw, 760px);
+    margin: 0;
+    justify-self: start;
+    left: 50%;
+    translate: -56% 0;           /* визуально центрируем сам ноутбук */
+  }
 }
