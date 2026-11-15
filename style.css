@@ -506,7 +506,6 @@ footer {
   width: 350px;
   height: 200px;
   background: linear-gradient(90deg, #3d065f, #5f27bd);
-  justify-self: center;
   border-top: 1px solid #ccc;
   border: 6px solid #290f52;
   border-radius: 20px;
@@ -514,7 +513,6 @@ footer {
   z-index: 100;
   box-shadow: 4px 10px 0 rgb(60, 23, 95), 10px 20px 0 #B592D9;
   transform: translateY(380px) translateX(265px) rotateX(25deg) rotateZ(25deg);
-  transform-style: preserve-3d;
   animation: laptop-bottom-panel 1s ease-in-out backwards;
 }
 
@@ -530,7 +528,6 @@ footer {
   width: 440px;
   height: 200px;
   background: linear-gradient(335.1deg, #2a0c5c 3.62%, #5f27bd 68.17%, #b4299a 97.16%);
-  justify-self: center;
   border-top: 1px solid #ccc;
   border: 10px solid #290f52;
   border-radius: 20px;
@@ -538,7 +535,6 @@ footer {
   z-index: 100;
   box-shadow: 4px -4px 0px #000;  
   transform: translateX(305px) translateY(190px) rotateX(25deg) rotateY(45deg);
-  transform-style: preserve-3d;
   animation: laptop-top-panel 1s ease-in-out backwards;
 }
 
@@ -693,6 +689,7 @@ footer {
 .uml-diagram {
   animation: diagram 1.5s ease backwards;
   z-index: -1;
+  pointer-events: auto;
   position: relative;
 }
 
